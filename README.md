@@ -2,7 +2,9 @@
  
 > 지도를 클릭하면, AI가 그 땅의 가능성을 분석합니다.
  
-![Gen-City 스크린샷](assets/screenshot.png)
+<img width="1512" height="859" alt="스크린샷 2026-04-19 오후 6 39 21" src="https://github.com/user-attachments/assets/16a3dcd3-444a-455f-a499-8105daf61dfb" />
+
+
  
 ---
  
