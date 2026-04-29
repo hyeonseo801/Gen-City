@@ -105,7 +105,7 @@ Gen-City는 정량적 지표를 기반으로 부지를 분석합니다.
 다만 AI가 지역의 역사와 정체성을 얼마나 정확히 읽어내는지는  
 여전히 열린 질문입니다.
 
-이 한계를 후암동을 사례로 직접 파고든 제안서 → 후암동 완전개발 제안서(https://hyeonseo801.github.io/huamdong-redevelopment-proposal)
+ 이 한계를 후암동을 사례로 직접 파고든 제안서 → [후암동 역세권 완전개발 제안](https://hyeonseo801.github.io/huamdong-redevelopment-proposal)
  
 ---
  
