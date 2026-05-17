@@ -2,11 +2,11 @@
  
 > 지도를 클릭하면, AI가 그 땅의 가능성을 분석합니다.
 
-<img width="1512" height="857" alt="스크린샷 2026-05-17 오후 9 00 04" src="https://github.com/user-attachments/assets/84c8c787-7698-4689-9a9e-90ed0181aa6e" />
-<img width="1512" height="982" alt="스크린샷 2026-05-17 오후 9 00 16" src="https://github.com/user-attachments/assets/0f3f29a8-3424-4cc4-b71f-cff2efd17ea1" />
-<img width="1512" height="855" alt="스크린샷 2026-05-17 오후 9 01 02" src="https://github.com/user-attachments/assets/061688c3-57b3-4bde-9a09-8e434a74c682" />
-<img width="1512" height="858" alt="스크린샷 2026-05-17 오후 9 00 47" src="https://github.com/user-attachments/assets/24d61002-ff7c-44a7-ae02-853cf33fcc0d" />
 
+<img width="1512" height="854" alt="스크린샷 2026-05-17 오후 9 10 33" src="https://github.com/user-attachments/assets/863936c8-aa3e-493a-a8de-1726cf1b8de7" />
+<img width="1512" height="854" alt="스크린샷 2026-05-17 오후 9 10 57" src="https://github.com/user-attachments/assets/b7625ea7-d883-4598-9bc1-ee69feded101" />
+<img width="1512" height="854" alt="스크린샷 2026-05-17 오후 9 10 48" src="https://github.com/user-attachments/assets/70cb624c-35e9-47cc-88fe-39d0b04f5f29" />
+<img width="1512" height="855" alt="스크린샷 2026-05-17 오후 9 01 02" src="https://github.com/user-attachments/assets/26770f44-2c3d-4a01-89f8-6793ca817c80" />
 
 
 
