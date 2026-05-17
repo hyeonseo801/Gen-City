@@ -1,11 +1,13 @@
 # 🏙️ Gen-City | 도시 개발 입지 분석 플랫폼
  
 > 지도를 클릭하면, AI가 그 땅의 가능성을 분석합니다.
- 
-<img width="1512" height="859" alt="스크린샷 2026-04-19 오후 6 39 21" src="https://github.com/user-attachments/assets/16a3dcd3-444a-455f-a499-8105daf61dfb" />
-<img width="1512" height="858" alt="스크린샷 2026-04-19 오후 6 39 37" src="https://github.com/user-attachments/assets/e556fe17-d4c7-4e70-938e-66c82c120d21" />
-<img width="1512" height="858" alt="스크린샷 2026-04-19 오후 6 39 54" src="https://github.com/user-attachments/assets/c86ec631-fc84-4944-9e30-24713665d124" />
-<img width="3024" height="1716" alt="image" src="https://github.com/user-attachments/assets/87472abb-bda2-4508-9de1-fd195670f440" />
+
+<img width="1512" height="857" alt="스크린샷 2026-05-17 오후 9 00 04" src="https://github.com/user-attachments/assets/84c8c787-7698-4689-9a9e-90ed0181aa6e" />
+<img width="1512" height="982" alt="스크린샷 2026-05-17 오후 9 00 16" src="https://github.com/user-attachments/assets/0f3f29a8-3424-4cc4-b71f-cff2efd17ea1" />
+<img width="1512" height="855" alt="스크린샷 2026-05-17 오후 9 01 02" src="https://github.com/user-attachments/assets/061688c3-57b3-4bde-9a09-8e434a74c682" />
+<img width="1512" height="858" alt="스크린샷 2026-05-17 오후 9 00 47" src="https://github.com/user-attachments/assets/24d61002-ff7c-44a7-ae02-853cf33fcc0d" />
+
+
 
 
  
