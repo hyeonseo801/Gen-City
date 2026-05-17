@@ -5,6 +5,7 @@
 <img width="1512" height="859" alt="스크린샷 2026-04-19 오후 6 39 21" src="https://github.com/user-attachments/assets/16a3dcd3-444a-455f-a499-8105daf61dfb" />
 <img width="1512" height="858" alt="스크린샷 2026-04-19 오후 6 39 37" src="https://github.com/user-attachments/assets/e556fe17-d4c7-4e70-938e-66c82c120d21" />
 <img width="1512" height="858" alt="스크린샷 2026-04-19 오후 6 39 54" src="https://github.com/user-attachments/assets/c86ec631-fc84-4944-9e30-24713665d124" />
+<img width="3024" height="1716" alt="image" src="https://github.com/user-attachments/assets/87472abb-bda2-4508-9de1-fd195670f440" />
 
 
  
