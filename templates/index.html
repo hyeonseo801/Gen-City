@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen-City | 토지이용계획 추천 시스템</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="sidebar">
+            <div id="sidebar-inner">
+                <div id="sidebar-top">
+                    <button id="sidebar-toggle">☰</button>
+                    <span id="sidebar-title">Gen-City</span>
+                </div>
+                <p class="subtitle">지도에서 부지를 클릭하세요</p>
+
+                <div id="info-panel" class="hidden">
+                    <div id="tab-bar">
+                        <button class="tab-btn active" data-tab="location">입지분석</button>
+                        <button class="tab-btn" data-tab="investment">투자분석</button>
+                    </div>
+
+                    <div id="tab-location" class="tab-panel">
+                        <div class="section">
+                            <h3>📍 위치 정보</h3>
+                            <p id="address">-</p>
+                            <p id="zone">용도지역: -</p>
+                            <p id="landprice">공시지가: -</p>
+                        </div>
+
+                        <div class="section hidden" id="score-section">
+                            <h3>📊 부지 종합 점수 <span id="score-total-badge"></span><button id="limit-info-btn" onclick="openLimitModal()" title="이 툴의 한계">i</button></h3>
+                            <canvas id="score-chart"></canvas>
+                            <button id="score-breakdown-toggle">▼ 점수 산정 근거 보기</button>
+                            <div id="score-breakdown" class="hidden">
+                                <div id="breakdown-content"></div>
+                            </div>
+                        </div>
+
+                        <div class="section">
+                            <h3>🎯 개발 목표</h3>
+                            <select id="goal-select">
+                                <option value="">목표 선택</option>
+                                <option value="청년 유입 촉진 및 주거 안정화">청년 유입</option>
+                                <option value="고령화 대응 및 복지 인프라 확충">고령화 대응</option>
+                                <option value="상업 활성화 및 지역 경제 성장">상업 활성화</option>
+                                <option value="친환경 녹지 중심 주거단지 조성">친환경 주거</option>
+                                <option value="복합용도 개발로 직주근접 실현">복합용도 개발</option>
+                            </select>
+                            <input type="text" id="goal-custom" placeholder="직접 입력 (선택사항)"/>
+                            <button id="recommend-btn" onclick="getRecommendation()">AI 추천 받기</button>
+                        </div>
+
+                        <div class="section hidden" id="result-section">
+                            <h3>🤖 Gemini 추천 결과</h3>
+                            <div id="recommendation-result"></div>
+                            <button id="pdf-btn" onclick="downloadPDF()">PDF 다운로드</button>
+                        </div>
+                    </div>
+
+                    <div id="tab-investment" class="tab-panel hidden">
+                        <div class="section">
+                            <h3>💰 투자 수익성 분석</h3>
+                            <p id="invest-dong">-</p>
+
+                            <div class="invest-row">
+                                <span class="invest-label">월 임대료 추정</span>
+                                <span class="invest-value" id="invest-rent">-</span>
+                            </div>
+                            <div class="invest-row">
+                                <span class="invest-label">연간 NOI 추정</span>
+                                <span class="invest-value" id="invest-noi">-</span>
+                            </div>
+                            <div class="invest-row">
+                                <span class="invest-label">Cap Rate</span>
+                                <span class="invest-value" id="invest-caprate">-</span>
+                            </div>
+                            <div class="invest-row">
+                                <span class="invest-label">데이터 신뢰도</span>
+                                <span class="invest-value" id="invest-confidence">-</span>
+                            </div>
+
+                            <p class="invest-note">※ 실거래가 기반 추정값입니다. 실제 투자 판단 시 전문가 검토가 필요합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="map-toggle">☰</button>
+        <div id="map"></div>
+    </div>
+
+    <!-- 한계 안내 모달 -->
+    <div id="limit-modal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <span>⚠️ 이 툴이 담지 못하는 것</span>
+                <button class="modal-close" onclick="closeLimitModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <p>Gen-City는 정량적 지표를 기반으로 부지를 분석합니다. 그런데 정량적 지표만으로 그 전부를 알 수는 없습니다.</p>
+                <p>목동을 예로 들면, 교통이나 공원 접근성 점수는 평범할 수 있습니다. 하지만 목동은 수십 년간 형성된 교육특구로서의 정체성이 있습니다. 그 맥락을 모르면 "주거지로서 평범한 동네"로 읽히지만, 실제로는 그 정체성이 개발 방향을 결정하는 핵심 변수입니다.</p>
+                <p>숫자로 환원되지 않는 것들이 있습니다. 이 동네가 어떤 역사를 가지고 있는지, 어떤 커뮤니티가 살아왔는지, 어떤 이유로 지금의 모습이 됐는지. 그것까지 포함했을 때 비로소 개발 방향을 말할 수 있습니다.</p>
+                <p>이를 보완하기 위해 Gemini에 주소 기반 동네 맥락을 주입해 정성적 분석이 함께 출력되도록 설계했습니다. 다만 AI가 지역의 역사와 정체성을 얼마나 정확히 읽어내는지는 여전히 열린 질문입니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/static/js/map.js"></script>
+</body>
+</html>

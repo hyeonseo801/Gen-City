@@ -1,0 +1,7 @@
+.env
+database/gen_city.db
+data/
+__pycache__/
+*.pyc
+.DS_Store
+venv/
