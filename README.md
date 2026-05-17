@@ -6,7 +6,8 @@
 <img width="1512" height="854" alt="스크린샷 2026-05-17 오후 9 10 33" src="https://github.com/user-attachments/assets/863936c8-aa3e-493a-a8de-1726cf1b8de7" />
 <img width="1512" height="854" alt="스크린샷 2026-05-17 오후 9 10 57" src="https://github.com/user-attachments/assets/b7625ea7-d883-4598-9bc1-ee69feded101" />
 <img width="1512" height="854" alt="스크린샷 2026-05-17 오후 9 10 48" src="https://github.com/user-attachments/assets/70cb624c-35e9-47cc-88fe-39d0b04f5f29" />
-<img width="1512" height="855" alt="스크린샷 2026-05-17 오후 9 01 02" src="https://github.com/user-attachments/assets/26770f44-2c3d-4a01-89f8-6793ca817c80" />
+<img width="1512" height="856" alt="스크린샷 2026-05-17 오후 9 12 41" src="https://github.com/user-attachments/assets/629e3be5-4029-47f8-90f5-743b06e6a1ae" />
+
 
 
 
